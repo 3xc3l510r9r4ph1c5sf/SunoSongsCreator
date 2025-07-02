@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white font-space;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .bauhaus-title {
+    @apply font-orbitron font-black text-6xl md:text-8xl lg:text-9xl;
+    background: linear-gradient(45deg, #E23A2E, #FCD34D, #1E3A8A, #8B5CF6);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+  
+  .diagonal-block {
+    @apply relative overflow-hidden;
+    transform: skew(-15deg) rotate(3deg);
+    transition: all 0.3s ease;
+  }
+  
+  .diagonal-block:hover {
+    transform: skew(-10deg) rotate(-2deg) scale(1.05);
+  }
+  
+  .geometric-card {
+    @apply relative bg-gradient-to-br from-gray-900 to-black border border-gray-800;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+  }
+  
+  .neon-glow {
+    box-shadow: 
+      0 0 5px currentColor,
+      0 0 10px currentColor,
+      0 0 15px currentColor,
+      0 0 20px currentColor;
+  }
+  
+  .text-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 2s linear infinite;
+  }
+  
+  .morphing-text {
+    animation: morph 3s ease-in-out infinite;
+  }
+  
+  .vapor-text {
+    animation: vapor 4s ease-in-out infinite;
+  }
+
+  /* Custom slider styles */
+  .slider {
+    background: #374151;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #8B5CF6;
+    cursor: pointer;
+    border: 2px solid #1F2937;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #8B5CF6;
+    cursor: pointer;
+    border: 2px solid #1F2937;
+  }
+}
+
+.grid-background {
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+.diagonal-lines {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255,255,255,0.05) 10px,
+    rgba(255,255,255,0.05) 20px
+  );
+}
